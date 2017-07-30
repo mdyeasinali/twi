@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/theme.css" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<header>
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Navbar-->
+    <div class="navbar-fixed">
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Settings</a></li>
+            <li><a href="#!">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Logout</a></li>
+        </ul>
+
+        <nav id="me-navbar">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboard.html" class="brand-logo">Twitouch</a>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Admin <img style="vertical-align: middle; margin-left: 20px; width: 40px" src="images/yuna.jpg" alt="" class="circle responsive-img"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!--End navbar-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+</header>
+
+<aside id="left-sidebar-nav">
+    <div id="slide-out" class="side-nav fixed">
+        <ul class="leftside-navigation">
+            <li><a href="#" class="waves-effect waves-default"><i class="material-icons left-icon">dashboard</i>Member Dashboard</a></li>
+            <li>
+                <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">group</i><i class="material-icons right-icon right">arrow_drop_down</i>Member</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="buttons.html" class="waves-effect waves-default">New Member</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Member Tree</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">attach_money</i><i class="material-icons right-icon right">arrow_drop_down</i>Transactions</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="buttons.html" class="waves-effect waves-default">Transfer</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Withdraw</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Ref Earn History</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Transfer History</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Withdraw History</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">work</i><i class="material-icons right-icon right">arrow_drop_down</i>Jobs</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="buttons.html" class="waves-effect waves-default">New Jobs</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Job Earn History</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">account_circle</i><i class="material-icons right-icon right">arrow_drop_down</i>Account</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="buttons.html" class="waves-effect waves-default">Account Inactive</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">View Profile</a></li>
+                        <li><a href="badges.html" class="waves-effect waves-default">Change password</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--Page Body-->
+<main>
+
+    <div class="me-page-title">
+        <!--Page Title-->
+        <h1>Dashboard</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content dash-nav-box">
+                        <span class="card-title dash-nav-title">Security Amount</span>
+                        <p class="dash-nav-footer">$15.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content dash-nav-box">
+                        <span class="card-title dash-nav-title">Today Ref Earn</span>
+                        <p class="dash-nav-footer">$3.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content dash-nav-box">
+                        <span class="card-title dash-nav-title">Today Job Earn</span>
+                        <p class="dash-nav-footer">$0.0000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content dash-nav-box">
+                        <span class="card-title dash-nav-title">Today Withdrawal</span>
+                        <p class="dash-nav-footer">$0.0000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content dash-nav-box">
+                        <span class="card-title dash-nav-title">Today Transfer</span>
+                        <p class="dash-nav-footer">$0.0000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content dash-nav-box">
+                        <span class="card-title dash-nav-title">Account Balance</span>
+                        <p class="dash-nav-footer">$101.9239</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+<!--End page body-->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--Footer-->
+<footer class="form-footer">
+
+    <div class="row">
+        <div class="col s12 center">
+            <ul class="footer-list">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">&copy;  MaterialMe</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!--End footer-->
+<!-- //////////////////////////////////////////////////////////////////////////// --
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+</body>
+</html>
