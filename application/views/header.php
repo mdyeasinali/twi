@@ -16,6 +16,8 @@ global $config;
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/jquery-treetable.css" />
+    <!--data tables-->
+    <link href="<?php echo BASE_URL; ?>static/plugins/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/style.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/theme.css" />
 
@@ -83,7 +85,7 @@ global $config;
                 <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">work</i><i class="material-icons right-icon right">arrow_drop_down</i>Jobs</a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="#" class="waves-effect waves-default">New Jobs</a></li>
+                        <li><a href="/admin/jobs" class="waves-effect waves-default">New Jobs</a></li>
                         <li><a href="#" class="waves-effect waves-default">Job Earn History</a></li>
                     </ul>
                 </div>
@@ -92,9 +94,9 @@ global $config;
                 <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">account_circle</i><i class="material-icons right-icon right">arrow_drop_down</i>Account</a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="#" class="waves-effect waves-default">Account Inactive</a></li>
-                        <li><a href="#" class="waves-effect waves-default">View Profile</a></li>
-                        <li><a href="#" class="waves-effect waves-default">Change password</a></li>
+                        <li><a href="/admin/account_inactive" class="waves-effect waves-default">Account Inactive</a></li>
+                        <li><a href="/admin/view_profile" class="waves-effect waves-default">View Profile</a></li>
+                        <li><a href="/admin/change_password" class="waves-effect waves-default">Change password</a></li>
                     </ul>
                 </div>
             </li>

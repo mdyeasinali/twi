@@ -3,7 +3,7 @@ error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_W
 
 $config = [];
 
-$config['base_url'] = 'http://www.twitouchnew.dev/'; // Base URL including trailing slash (e.g. http://localhost/)
+$config['base_url'] = 'http://www.twitouchnew.com/'; // Base URL including trailing slash (e.g. http://localhost/)
 
 $config['default_controller'] = 'authenticate'; // Default controller to load
 $config['error_controller'] = 'error'; // Controller used for errors (e.g. 404, 500 etc)

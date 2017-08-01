@@ -1,14 +1,16 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: BOSS
  * Date: 7/29/2017
  * Time: 2:03 AM
  */
+class Member extends Model
+{
 
-class Member extends Model {
-
-    function balance_transfer($user_id, $ruserid, $amount, $comment) {
+    function balance_transfer($user_id, $ruserid, $amount, $comment)
+    {
         global $db, $config;
         $bl1 = $db->query("INSERT INTO `member_acc`(`user_id`, `pay_type`, `pay_by_to`, `job_id`, `amount_dr`, `amount_cr`, `created_on`,`status`,`pay_way`,`a_notes`) VALUES ($ruserid,6,$user_id,0,$amount,0,now(),0,0,'$comment')");
         $bl2 = $db->query("INSERT INTO `member_acc`(`user_id`, `pay_type`, `pay_by_to`, `job_id`, `amount_dr`, `amount_cr`, `created_on`,`status`,`pay_way`,`a_notes`) VALUES ($user_id,6,$ruserid,0,0,$amount,now(),0,0,'$comment')");
@@ -20,7 +22,8 @@ class Member extends Model {
         }
     }
 
-    function member_balance_withdrawals($params){
+    function member_balance_withdrawals($params)
+    {
         global $db, $config;
 
         $member_withd_charge = c_con('id', '7', 'account_setting');
@@ -60,17 +63,18 @@ class Member extends Model {
             $data1['job_id'] = $db->insert_id;
             $db->insert_update('admin_acc', $data1);
             return true;
-        } catch (Exception $e){
+        } catch (Exception $e) {
             return false;
         }
     }
 
-    function createTree($uid){
+    function createTree($uid)
+    {
         global $db, $config;
         $ret = [];
-        $thecm = $db->get_results("SELECT id, username, ref_id FROM users WHERE ref_id='".$uid."' AND status=1", ARRAY_A);
+        $thecm = $db->get_results("SELECT id, username, ref_id FROM users WHERE ref_id='" . $uid . "' AND status=1", ARRAY_A);
         $sl = 1;
-        foreach ($thecm as $cm){
+        foreach ($thecm as $cm) {
             $ret[] = [
                 'sl' => $sl,
                 'id' => $cm['id'],
@@ -83,15 +87,16 @@ class Member extends Model {
         return $ret;
     }
 
-    function hasCh($root){
+    function hasCh($root)
+    {
         global $db, $config;
-        $thecm = $db->get_results("SELECT id, username, ref_id FROM users WHERE ref_id='".$root."' AND status=1", ARRAY_A);
-        if ($db->rows_affected > 0){
+        $thecm = $db->get_results("SELECT id, username, ref_id FROM users WHERE ref_id='" . $root . "' AND status=1", ARRAY_A);
+        if ($db->rows_affected > 0) {
             return $thecm['id'];
-        }
-        else {
+        } else {
             return false;
         }
     }
+
 
 }

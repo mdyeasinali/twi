@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,28 +32,49 @@
                 <div class="col s12">
                     <div class="card form-box">
                         <div class="card-content">
-                            <span class="card-title login-title">Create your MaterialMe account.</span>
+                            <span class="card-title login-title">Create your twitouch account.<?php echo $info?></span>
                             <div class="row">
-                                <form>
+                                <form class="col s12 no-padding" method="POST" action="/authenticate/register">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix_username" type="text" name="un">
+                                    <label for="icon_prefix_username" class="">Username</label>
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="password" type="password" name="pw">
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock_outline</i>
+                                    <input id="confirm-password" type="password" name="cpw">
+                                    <label for="confirm-password">Confirm Password</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="icon_prefix_email" type="email" name="em">
+                                    <label for="icon_prefix_email">E-mail</label>
+                                </div>
+
                                     <div class="input-field col s12">
-                                        <i class="material-icons prefix">mail</i>
-                                        <input id="email" type="email">
-                                        <label for="email">Email</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <i class="material-icons prefix">lock</i>
-                                        <input id="password" type="password">
-                                        <label for="password">Password</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <i class="material-icons prefix">lock_outline</i>
-                                        <input id="confirm-password" type="password">
-                                        <label for="confirm-password">Confirm Password</label>
+                                        <i class="material-icons prefix">M</i>
+                                        <input id="icon_prefix_username" type="text" name="phn">
+                                        <label for="icon_prefix_username" class="">Mobile Number</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <button class="col s12 btn waves-effect waves-light default" type="submit" name="action">Create your account</button>
+                                        <i class="material-icons prefix">R</i>
+                                        <input id="icon_prefix_username" type="text" name="ref">
+                                        <label for="icon_prefix_username" class="">Reference ID</label>
                                     </div>
+
+                                <div class="input-field col s12">
+                                    <button class="col s12 btn waves-effect waves-light default" type="submit"
+                                            name="action">Create your account
+                                    </button>
+                                </div>
+                                </form>
                                 </form>
                             </div>
                         </div>

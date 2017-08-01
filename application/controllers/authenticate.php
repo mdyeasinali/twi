@@ -8,7 +8,10 @@ class Authenticate extends Controller {
 	}
 
     function register() {
+        $auth = $this->loadModel('auth');
+        $info = $auth->registion($_POST['un'], $_POST['pw'], $_POST['cpw'], $_POST['em'], $_POST['phn'], $_POST['ref']);
 		$template = $this->loadView('register');
+        $template->set('info', $info);
 		$template->render();
 	}
 
