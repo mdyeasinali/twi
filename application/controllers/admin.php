@@ -27,22 +27,27 @@ class Admin extends Controller
         $template = $this->loadView('jobs');
         $template->render();
     }
-
-    function account_inactive()
+    function job_history()
     {
+        global $config;
+        $template = $this->loadView('job_history');
+        $template->render();
+    }
+
+    function account_inactive() {
         global $config;
         $users = $this->loadModel('Account');
         $msg = $users->account_inactive($config["logged"]->id, $_POST['username'], $_POST['password']);
         if ($msg) {
             $ret['status'] = 'success';
-            $ret['msg'] = 'Transfer successfully completed.';
+            $ret['msg'] = 'Account Inactive Successfully completed.';
         } else {
             $ret['status'] = 'error';
-            $ret['msg'] = 'Cannot transfer now. Please try letter.';
+            $ret['msg'] = 'Cannot Account Inactive  now. Please try letter.';
         }
         $template = $this->loadView('account_inactive');
-        $template->set("msg", $msg);
         $template->render();
+        $_SESSION['ret'] = $ret;
     }
 
     function view_profile()
@@ -60,12 +65,15 @@ class Admin extends Controller
         if ($data) {
             $ret['status'] = 'success';
             $ret['msg'] = 'Password change successfully completed.';
+            $template = $this->loadView('view_profile');
         } else {
             $ret['status'] = 'error';
             $ret['msg'] = 'Cannot change password. Please try letter.';
+            $template = $this->loadView('update_profile');
         }
-        $template = $this->loadView('update_profile');
+
         $template->render();
+        $_SESSION['ret'] = $ret;
     }
 
     function change_password()
@@ -83,6 +91,7 @@ class Admin extends Controller
         $template = $this->loadView('change_password');
         $template->set("data", $data);
         $template->render();
+        $_SESSION['ret'] = $ret;
     }
 
     public function transfer_balance()

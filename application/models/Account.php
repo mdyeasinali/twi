@@ -57,11 +57,10 @@ class Account extends Model
         global $db;
         $pass = md5(sha1($password));
         $chick = $db->get_row("SELECT * FROM users WHERE username='" . $username . "' AND password='" . $pass . "'");
-
         if ($chick) {
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
 
         }
 

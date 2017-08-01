@@ -86,7 +86,7 @@ global $config;
                 <div class="collapsible-body">
                     <ul>
                         <li><a href="/admin/jobs" class="waves-effect waves-default">New Jobs</a></li>
-                        <li><a href="#" class="waves-effect waves-default">Job Earn History</a></li>
+                        <li><a href="/admin/job_history" class="waves-effect waves-default">Job Earn History</a></li>
                     </ul>
                 </div>
             </li>

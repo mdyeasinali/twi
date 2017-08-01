@@ -1,4 +1,4 @@
-<?php include ('header.php');?>
+<?php include('header.php'); ?>
     <!--End pre page loader-->
     <main>
         <!--Page body content-->
@@ -8,21 +8,19 @@
                 <div class="col s12 m-t-10">
                     <table id="example1" class="bordered">
                         <thead>
-                            <tr>
-                                <th>Job Category</th>
-                                <th>Description</th>
-                                <th>Payment</th>
-                                <th>Action</th>
-                            </tr>
+                        <tr>
+                            <th>Sl</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>Data Entry</td>
-                                <td>https://www.facebook.com/laugh.like.we.do</td>
-                                <td>0.35</td>
-                                <td><a class="waves-effect waves-teal btn-flat text-teal">Do This Job</a></td>
-                            </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2/30/2017</td>
+                            <td>0.35</td>
+                        </tr>
 
                         </tbody>
                     </table>
@@ -37,4 +35,4 @@
     <!-- //////////////////////////////////////////////////////////////////////////// -->
 
     <!-- //////////////////////////////////////////////////////////////////////////// -->
-<?php include ('footer.php');?>
+<?php include('footer.php'); ?>

@@ -6,8 +6,7 @@
  * Date: 7/25/2017
  * Time: 1:54 AM
  */
-class Auth extends Model
-{
+class Auth extends Model {
 
     public function login($username, $password)
     {

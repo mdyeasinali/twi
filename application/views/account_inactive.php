@@ -14,7 +14,7 @@ include 'header.php';
 
         <div class="me-page-title">
             <!--Page Title-->
-            <h1>Membership Inactive <?php echo $msg; ?></h1>
+            <h1>Membership Inactive </h1>
         </div>
 
         <div class="me-page-body">
