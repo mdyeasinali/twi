@@ -1,5 +1,6 @@
 <?php include('header.php'); ?>
     <!--End pre page loader-->
+
     <main>
         <!--Page body content-->
         <div class="me-page-body">
@@ -9,18 +10,23 @@
                     <table id="example1" class="bordered">
                         <thead>
                         <tr>
-                            <th>Sl</th>
+                            <th>Sl#</th>
                             <th>Date</th>
                             <th>Amount</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2/30/2017</td>
-                            <td>0.35</td>
-                        </tr>
+                        <?php $i = 1;
+                        foreach ($jobhes as $key) { ?>
+                            <tr>
+                                <td><?php echo $i; ?></td>
+                                <td><?php echo $key->job_date; ?></td>
+                                <td><?php echo $key->amount; ?></td>
+                            </tr>
+
+                            <?php $i++;
+                        } ?>
 
                         </tbody>
                     </table>
@@ -32,7 +38,4 @@
         <!-- //////////////////////////////////////////////////////////////////////////// -->
     </main>
     <!--End page body-->
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
 <?php include('footer.php'); ?>

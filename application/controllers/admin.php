@@ -24,17 +24,37 @@ class Admin extends Controller
     function jobs()
     {
         global $config;
+        $job = $this->loadModel('Alljob');
+        $jobinfo = $job->jobs($config["logged"]->id);
         $template = $this->loadView('jobs');
-        $template->render();
-    }
-    function job_history()
-    {
-        global $config;
-        $template = $this->loadView('job_history');
+        $template->set("jobinfo", $jobinfo);
         $template->render();
     }
 
-    function account_inactive() {
+    function job_area()
+    {
+        global $config;
+        //$job = $this->loadModel('Alljob');
+       // $jobinfo = $job->jobs($config["logged"]->id);
+        $template = $this->loadView('job_area');
+        //$template->set("jobinfo", $jobinfo);
+        $template->render();
+    }
+
+
+
+    function job_history()
+    {
+        global $config;
+        $jobss = $this->loadModel('Alljob');
+        $jobhes = $jobss->jobshestory($config["logged"]->id);
+        $template = $this->loadView('job_history');
+        $template->set("jobhes", $jobhes);
+        $template->render();
+    }
+
+    function account_inactive()
+    {
         global $config;
         $users = $this->loadModel('Account');
         $msg = $users->account_inactive($config["logged"]->id, $_POST['username'], $_POST['password']);

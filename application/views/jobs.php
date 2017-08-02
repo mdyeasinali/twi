@@ -1,4 +1,4 @@
-<?php include ('header.php');?>
+<?php include('header.php'); ?>
     <!--End pre page loader-->
     <main>
         <!--Page body content-->
@@ -8,21 +8,26 @@
                 <div class="col s12 m-t-10">
                     <table id="example1" class="bordered">
                         <thead>
-                            <tr>
-                                <th>Job Category</th>
-                                <th>Description</th>
-                                <th>Payment</th>
-                                <th>Action</th>
-                            </tr>
+                        <tr>
+                            <th>Job Category</th>
+                            <th>Description</th>
+                            <th>Payment</th>
+                            <th>Action</th>
+                        </tr>
                         </thead>
 
                         <tbody>
+                        <?php foreach ($jobinfo as $key) { ?>
                             <tr>
-                                <td>Data Entry</td>
-                                <td>https://www.facebook.com/laugh.like.we.do</td>
-                                <td>0.35</td>
-                                <td><a class="waves-effect waves-teal btn-flat text-teal">Do This Job</a></td>
+                                <td><?php echo $key->catagory; ?></td>
+                                <td><?php echo $key->question; ?></td>
+                                <td><?php echo $key->payment; ?></td>
+                                <td><a href="job_area" style="  background: cornflowerblue;   height: 30px; line-height: 30px; padding: 0 .5rem; text-transform: uppercase;
+    vertical-align: middle" class="waves-effect waves-light btn ">Do This Job</a></td>
+
                             </tr>
+                        <?php } ?>
+
 
                         </tbody>
                     </table>
@@ -37,4 +42,4 @@
     <!-- //////////////////////////////////////////////////////////////////////////// -->
 
     <!-- //////////////////////////////////////////////////////////////////////////// -->
-<?php include ('footer.php');?>
+<?php include('footer.php'); ?>
