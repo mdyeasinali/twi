@@ -45,7 +45,7 @@ global $config;
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="" href="javascript:">Acc : $87465</a></li>
+                    <li><a class="" href="javascript:">Acc : $<?= $config["logged"]->total ?></a></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo ($config['logged']) ? $config['logged']->username : ''?> <i class="material-icons right">account_circle</i></a></li>
                 </ul>
             </div>

@@ -31,16 +31,15 @@ class Admin extends Controller
         $template->render();
     }
 
-    function job_area()
+    function job_area($data)
     {
         global $config;
-        //$job = $this->loadModel('Alljob');
-       // $jobinfo = $job->jobs($config["logged"]->id);
+        $job = $this->loadModel('Alljob');
+        $jobarea = $job->job_ares($data);
         $template = $this->loadView('job_area');
-        //$template->set("jobinfo", $jobinfo);
+        $template->set("jobarea", $jobarea);
         $template->render();
     }
-
 
 
     function job_history()

@@ -16,7 +16,10 @@ $db = new ezSQL_mysqli($config['db_username'],$config['db_password'],$config['db
 
 if(isset($_SESSION['user'])){
     $cur_user = $db->get_row("SELECT * FROM users WHERE id='" . $_SESSION['user'] . "'");
+    $cur_user->total =  $db->get_var("SELECT SUM(amount_cr) AS total_credit FROM member_acc WHERE user_id='" .$_SESSION['user']."'");
+
     unset($cur_user->password);
     $config['logged'] = $cur_user;
+
 }
 
