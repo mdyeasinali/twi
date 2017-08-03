@@ -8,7 +8,6 @@
  */
 class Alljob extends Model
 {
-
     public function jobs($userid)
     {
         global $db, $config;
@@ -36,6 +35,17 @@ class Alljob extends Model
         global $db, $config;
         $job = $db->get_row("SELECT * FROM job_entry WHERE id='$data'");
         $qurey = $db->get_row("SELECT * FROM job_cat WHERE id='" . $job->cat_id . "'");
+        $job->cat = $qurey;
+        return $job;
+    }
+
+    public function job_click($data)
+    {
+        global $db, $config;
+        $date = date("Y/m/d");
+        $job = $db->get_row("SELECT * FROM job_entry WHERE id='$data'");
+        $in = $db->query("INSERT INTO member_job_cat(user_id,cat_id,job_id,created_on)VALUES('".$config['logged']->id ."','$job->cat_id','$job->id','$date')");
+        $qurey = $db->get_row("SELECT * FROM job_cat WHERE id='" . $job->id . "'");
         $job->cat = $qurey;
         return $job;
     }

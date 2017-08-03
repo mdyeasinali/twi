@@ -35,7 +35,7 @@ include 'header.php';
                 <div class="card">
                     <div class="card-content dash-nav-box">
                         <span class="card-title dash-nav-title">Today Ref Earn</span>
-                        <p class="dash-nav-footer">$3.00</p>
+                        <p class="dash-nav-footer">$<?php echo $refamount ?></p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ include 'header.php';
                 <div class="card">
                     <div class="card-content dash-nav-box">
                         <span class="card-title dash-nav-title">Today Withdrawal</span>
-                        <p class="dash-nav-footer">$0.0000</p>
+                        <p class="dash-nav-footer">$<?php echo $withdrawalamount ?></p>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ include 'header.php';
                 <div class="card">
                     <div class="card-content dash-nav-box">
                         <span class="card-title dash-nav-title">Account Balance</span>
-                        <p class="dash-nav-footer">$101.9239</p>
+                        <p class="dash-nav-footer">$<?= $config["logged"]->total ?></p>
                     </div>
                 </div>
             </div>

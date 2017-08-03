@@ -22,6 +22,13 @@ class Member extends Model
         }
     }
 
+    function bal_tran_hestory(){
+        global $db, $config;
+        $tranHis = $db->get_results("SELECT * FROM member_acc WHERE user_id='" . $config['logged']->id . "'");
+        return $tranHis;
+
+    }
+
     function member_balance_withdrawals($params)
     {
         global $db, $config;
@@ -66,6 +73,13 @@ class Member extends Model
         } catch (Exception $e) {
             return false;
         }
+    }
+
+    function bal_with_hestory(){
+        global $db, $config;
+        $earn = $db->get_results("SELECT * FROM member_acc WHERE user_id='" . $config['logged']->id . "'");
+         return $earn;
+
     }
 
     function createTree($uid)

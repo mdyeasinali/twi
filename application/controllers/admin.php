@@ -11,7 +11,12 @@ class Admin extends Controller
     function index()
     {
         global $config;
+        $amount = $this->loadModel('DasborardAmount');
+        $totalamount = $amount->toDayrefEarn();
+        $totalWithdrawal = $amount->toDayWithdrawal();
         $template = $this->loadView('dashboard');
+        $template->set("refamount", $totalamount);
+        $template->set("withdrawalamount", $totalWithdrawal);
         $template->render();
     }
 
@@ -129,11 +134,30 @@ class Admin extends Controller
         $_SESSION['ret'] = $ret;
         $this->redirect('/admin/transfer');
     }
+    function transfer_history()
+    {
+        $member = $this->loadModel('member');
+        $tranHis = $member->bal_tran_hestory();
+        $template = $this->loadView('transfer_history');
+          $template->set("tranHis", $tranHis);
+        $template->render();
+    }
 
     function withdraw()
     {
         $template = $this->loadView('withdraw');
         $template->render();
+    }
+
+
+    function withdraw_history()
+    {
+        $member = $this->loadModel('member');
+        $withHis = $member->bal_with_hestory();
+        $template = $this->loadView('withdraw_history');
+        $template->set("withHis", $withHis);
+        $template->render();
+
     }
 
     public function request_withdraw()

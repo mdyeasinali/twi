@@ -76,8 +76,8 @@ global $config;
                         <li><a href="/admin/transfer" class="waves-effect waves-default">Transfer</a></li>
                         <li><a href="/admin/withdraw" class="waves-effect waves-default">Withdraw</a></li>
                         <li><a href="/admin/member_report" class="waves-effect waves-default">Ref Earn History</a></li>
-                        <li><a href="#" class="waves-effect waves-default">Transfer History</a></li>
-                        <li><a href="#" class="waves-effect waves-default">Withdraw History</a></li>
+                        <li><a href="/admin/transfer_history" class="waves-effect waves-default">Transfer History</a></li>
+                        <li><a href="/admin/withdraw_history" class="waves-effect waves-default">Withdraw History</a></li>
                     </ul>
                 </div>
             </li>
