@@ -37,10 +37,10 @@ include 'header.php';
                                         <td><?php echo $key2->created_on ?></td>
                                         <td><?php echo $key2->a_notes ?></td>
                                     </tr>
-                                <?php }else {
-                                    echo "No Jobs Found";
-                                }
+                                <?php }
                             }
+                        }else {
+                            echo "No Jobs Found";
                         } ?>
 
 

@@ -44,7 +44,7 @@ include 'header.php';
                 <div class="card">
                     <div class="card-content dash-nav-box">
                         <span class="card-title dash-nav-title">Today Job Earn</span>
-                        <p class="dash-nav-footer">$0.0000</p>
+                        <p class="dash-nav-footer">$<?php echo $totaljobEran ?></p>
                     </div>
                 </div>
             </div>

@@ -14,9 +14,11 @@ class Admin extends Controller
         $amount = $this->loadModel('DasborardAmount');
         $totalamount = $amount->toDayrefEarn();
         $totalWithdrawal = $amount->toDayWithdrawal();
+        $totaljobEran = $amount->toDayjobEran();
         $template = $this->loadView('dashboard');
         $template->set("refamount", $totalamount);
         $template->set("withdrawalamount", $totalWithdrawal);
+        $template->set("totaljobEran", $totaljobEran);
         $template->render();
     }
 
