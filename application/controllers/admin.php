@@ -42,6 +42,10 @@ class Admin extends Controller
     {
         global $config;
         $job = $this->loadModel('Alljob');
+        if($_GET['click']){
+            $job->job_click($data);
+            $this->redirect("admin/jobs");
+        }
         $jobarea = $job->job_ares($data);
         $template = $this->loadView('job_area');
         $template->set("jobarea", $jobarea);
@@ -49,8 +53,7 @@ class Admin extends Controller
     }
 
 
-    function job_history()
-    {
+    function job_history()  {
         global $config;
         $jobss = $this->loadModel('Alljob');
         $jobhes = $jobss->jobshestory($config["logged"]->id);
@@ -204,6 +207,11 @@ class Admin extends Controller
     {
         $template = $this->loadView('ref_earn_history');
         $template->render();
+    }
+
+    public function  logout(){
+        session_destroy();
+        $this->redirect("");
     }
 
     public function hide_nofy()

@@ -1,10 +1,14 @@
 <?php include('header.php'); ?>
     <!--End pre page loader-->
     <main>
+        <div class="me-page-title">
+            <!--Page Title-->
+            <h1>New Jobs</h1>
+        </div>
+
         <!--Page body content-->
         <div class="me-page-body">
             <div class="row">
-                <h2 class="col s12 header">New Jobs</h2>
                 <div class="col s12 m-t-10">
                     <table id="example1" class="bordered">
                         <thead>

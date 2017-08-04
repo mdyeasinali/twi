@@ -15,7 +15,7 @@ class DasborardAmount extends Model
         $date->getTimestamp();
         $beginOfDay = strtotime("midnight", $date->getTimestamp());
         $endOfDay = strtotime("tomorrow", $beginOfDay) - 1;
-        $referan = $db->get_var("SELECT SUM(created_by) AS total_credit FROM member_ref_earn WHERE member_id='" . $config["logged"]->id . "' AND created_on  BETWEEN '" . date('Y-m-d H:i:s', $beginOfDay) . "' AND '" . date('Y-m-d H:i:s', $endOfDay) . "'");
+        $referan = $db->get_var("SELECT SUM(amount_cr) AS total_credit FROM member_acc WHERE user_id ='". $config["logged"]->id . "' AND isRef = 1  AND created_on  BETWEEN '" . date('Y-m-d H:i:s', $beginOfDay) . "' AND '" . date('Y-m-d H:i:s', $endOfDay) . "'");
         return $referan;
 
     }

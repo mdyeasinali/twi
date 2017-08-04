@@ -2,10 +2,14 @@
     <!--End pre page loader-->
 
     <main>
+        <div class="me-page-title">
+            <!--Page Title-->
+            <h1>Jobs Information</h1>
+        </div>
+
         <!--Page body content-->
         <div class="me-page-body">
             <div class="row">
-                <h2 class="col s12 header">New Jobs</h2>
                 <div class="col s12 m-t-10">
                     <table id="example1" class="bordered">
                         <thead>
@@ -21,8 +25,8 @@
                         foreach ($jobhes as $key) { ?>
                             <tr>
                                 <td><?php echo $i; ?></td>
-                                <td><?php echo $key->job_date; ?></td>
-                                <td><?php echo $key->amount; ?></td>
+                                <td><?php echo $key->created_on; ?></td>
+                                <td><?php echo $key->amount_cr; ?></td>
                             </tr>
 
                             <?php $i++;

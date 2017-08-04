@@ -36,7 +36,7 @@ global $config;
             <li><a href="#!">Settings</a></li>
             <li><a href="#!">Profile</a></li>
             <li class="divider"></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="admin/logout">Logout</a></li>
         </ul>
 
         <nav id="me-navbar">
