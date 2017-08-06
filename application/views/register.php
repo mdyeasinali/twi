@@ -1,3 +1,6 @@
+<?php
+global $config;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +61,7 @@
                                 </div>
 
                                     <div class="input-field col s12">
-                                        <i class="material-icons prefix">M</i>
+                                        <i class="material-icons prefix">phone</i>
                                         <input id="icon_prefix_username" type="text" name="phn">
                                         <label for="icon_prefix_username" class="">Mobile Number</label>
                                     </div>
@@ -93,28 +96,6 @@
 <!--End page body-->
 <!-- //////////////////////////////////////////////////////////////////////////// -->
 
-<!-- //////////////////////////////////////////////////////////////////////////// -->
-<!--Footer-->
-<footer class="form-footer">
-
-    <div class="row">
-        <div class="col s12 center">
-            <ul class="footer-list">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">&copy;  MaterialMe</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-<!--End footer-->
-<!-- //////////////////////////////////////////////////////////////////////////// --
-
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo BASE_URL; ?>static/js/materialize.min.js"></script>
-<script type="text/javascript">
-
-</script>
-</body>
-</html>
+<?php
+include 'footer.php';
+?>

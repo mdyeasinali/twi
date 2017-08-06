@@ -36,7 +36,7 @@ global $config;
             <li><a href="#!">Settings</a></li>
             <li><a href="#!">Profile</a></li>
             <li class="divider"></li>
-            <li><a href="admin/logout">Logout</a></li>
+            <li><a href="/admin/logout">Logout</a></li>
         </ul>
 
         <nav id="me-navbar">
@@ -64,7 +64,7 @@ global $config;
                 <a class="collapsible-header waves-effect waves-default"><i class="material-icons left-icon">group</i><i class="material-icons right-icon right">arrow_drop_down</i>Member</a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="#" class="waves-effect waves-default">New Member</a></li>
+                        <li><a href="/admin/member_request" class="waves-effect waves-default">New Member</a></li>
                         <li><a href="/admin/member_tree" class="waves-effect waves-default">Member Tree</a></li>
                     </ul>
                 </div>

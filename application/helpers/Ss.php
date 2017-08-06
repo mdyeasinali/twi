@@ -2,17 +2,17 @@
 
 class Ss {
 
-	function set($key, $val)
+	public function set($key, $val)
 	{
 		$_SESSION["$key"] = $val;
 	}
-	
-	function get($key)
+
+    public function get($key)
 	{
 		return $_SESSION["$key"];
 	}
-	
-	function destroy()
+
+    public function destroy()
 	{
 		session_destroy();
 	}

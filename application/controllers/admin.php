@@ -42,7 +42,7 @@ class Admin extends Controller
     {
         global $config;
         $job = $this->loadModel('Alljob');
-        if($_GET['click']){
+        if ($_GET['click']) {
             $job->job_click($data);
             $this->redirect("admin/jobs");
         }
@@ -53,7 +53,8 @@ class Admin extends Controller
     }
 
 
-    function job_history()  {
+    function job_history()
+    {
         global $config;
         $jobss = $this->loadModel('Alljob');
         $jobhes = $jobss->jobshestory($config["logged"]->id);
@@ -139,12 +140,13 @@ class Admin extends Controller
         $_SESSION['ret'] = $ret;
         $this->redirect('/admin/transfer');
     }
+
     function transfer_history()
     {
         $member = $this->loadModel('member');
         $tranHis = $member->bal_tran_hestory();
         $template = $this->loadView('transfer_history');
-          $template->set("tranHis", $tranHis);
+        $template->set("tranHis", $tranHis);
         $template->render();
     }
 
@@ -194,6 +196,20 @@ class Admin extends Controller
         $template->render();
     }
 
+    function member_request()
+    {
+        $member = $this->loadModel('member');
+        if ($_GET['status']!=0) {
+            $member->member_approve();
+        }
+        global $config;
+
+        $meminfo = $member->member_request();        ;
+        $template = $this->loadView('member_request');
+        $template->set('meminfo', $meminfo);
+        $template->render();
+    }
+
     public function getTree()
     {
         $member = $this->loadModel('member');
@@ -209,7 +225,8 @@ class Admin extends Controller
         $template->render();
     }
 
-    public function  logout(){
+    public function logout()
+    {
         session_destroy();
         $this->redirect("");
     }

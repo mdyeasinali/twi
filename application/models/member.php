@@ -12,8 +12,8 @@ class Member extends Model
     function balance_transfer($user_id, $ruserid, $amount, $comment)
     {
         global $db, $config;
-        $bl1 = $db->query("INSERT INTO `member_acc`(`user_id`, `pay_type`, `pay_by_to`, `job_id`, `amount_dr`, `amount_cr`, `created_on`,`status`,`pay_way`,`a_notes`) VALUES ($ruserid,6,$user_id,0,$amount,0,now(),0,0,'$comment')");
-        $bl2 = $db->query("INSERT INTO `member_acc`(`user_id`, `pay_type`, `pay_by_to`, `job_id`, `amount_dr`, `amount_cr`, `created_on`,`status`,`pay_way`,`a_notes`) VALUES ($user_id,6,$ruserid,0,0,$amount,now(),0,0,'$comment')");
+        $bl1 = $db->query("INSERT INTO `member_acc`(`user_id`, `pay_type`, `pay_by_to`, `job_id`, `amount_dr`, `amount_cr`, `created_on`,`status`,`pay_way`,`a_notes`) VALUES ($ruserid,6,$user_id,0,0,$amount,now(),0,0,'$comment')");
+        $bl2 = $db->query("INSERT INTO `member_acc`(`user_id`, `pay_type`, `pay_by_to`, `job_id`, `amount_dr`, `amount_cr`, `created_on`,`status`,`pay_way`,`a_notes`) VALUES ($user_id,6,$ruserid,0,$amount,0,now(),0,0,'$comment')");
 
         if ($bl1 && $bl2) {
             return TRUE;
@@ -79,7 +79,46 @@ class Member extends Model
         global $db, $config;
         $earn = $db->get_results("SELECT * FROM member_acc WHERE user_id='" . $config['logged']->id . "'");
          return $earn;
+    }
+    function member_request(){
+        global $db, $config;
+        $memberinfo = $db->get_results("SELECT * FROM users WHERE ref_id='" . $config['logged']->id . "' AND active='0'");
+        return $memberinfo;
+    }
 
+//1st G - $1
+//2nd G - $.50
+//3rd G - $.25
+//4thG - $.20
+//5thG - $.15
+//6thG - $.15
+//total 15% ($2.25)
+    function member_approve(){
+        global $db, $config;
+        $memberinfo = $db->query("SELECT * FROM users WHERE ref_id='" . $config['logged']->id . "' AND id='" . $_GET['status']. "'");
+        if($memberinfo) {
+
+
+        }
+    }
+
+    public function getFromref($ref, $toid, $amount) {
+        global $db, $config;
+        $date = date("Y-m-d H:i:s");
+        $data2['user_id'] = $toid;
+        $data2['amount_dr'] = $amount;
+        $data2['job_id'] = 0;
+        $data2['g_email'] = $ref->email;
+        $data2['pay_type'] = "2";
+        $data2['pay_by_to'] = $ref->id;
+        $data2['a_notes'] = "ref eran";
+        $data2['created_on'] = $date;
+        try {
+            $db->insert_update('member_acc', $data2);
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
     function createTree($uid)

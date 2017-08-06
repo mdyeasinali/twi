@@ -39,7 +39,18 @@
 <script type="text/javascript">
     <?php
         if ($_SESSION['ret']){
-            toast($_SESSION['ret']['status'], $_SESSION['ret']['msg'], 'green');
+            $color = '';
+            if ($_SESSION['ret']['status']  == 'success'){
+                $color = 'green';
+            }
+            elseif ($_SESSION['ret']['status']  == 'error'){
+                $color = 'red';
+            }
+            else{
+                $color = 'black';
+            }
+
+            toast($_SESSION['ret']['status'], $_SESSION['ret']['msg'], $color);
         }
     ?>
 </script>

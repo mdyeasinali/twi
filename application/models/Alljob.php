@@ -107,8 +107,7 @@ class Alljob extends Model
         }
     }
 
-    public function addreferan($ref, $job_id, $amount, $parcent)
-    {
+    public function addreferan($ref, $job_id, $amount, $parcent) {
         global $db, $config;
         $amount1 = $amount / 100 * $parcent;
         $date = date("Y-m-d H:i:s");
@@ -127,11 +126,7 @@ class Alljob extends Model
         } catch (Exception $e) {
             return false;
         }
-
-
     }
-
-
 }
 
 ?>
